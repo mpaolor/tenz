@@ -1,6 +1,6 @@
 import type { Die } from "../types";
 
-export const NUM_DICE = 10;
+export const DICE_COUNT = 10;
  
 export function randomFace(): number {
   return Math.ceil(Math.random() * 6);
@@ -15,7 +15,9 @@ function createNewDie(id: number): Die {
 }
  
 export function newDice(): Die[] {
-  return Array.from({ length: NUM_DICE }, (_, i) => createNewDie(i));
+  return new Array(DICE_COUNT)
+    .fill(0)
+    .map((_, i) => createNewDie(i));
 }
  
 export const PIPS: Record<number, [number, number][]> = {
