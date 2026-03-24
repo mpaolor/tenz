@@ -10,7 +10,7 @@ import WinBanner from "./components/WinBanner";
 import { useState } from "react";
 
 export default function App() {
-  const [dice, setDice] = useState<Die[]>(newDice());
+  const [dice, setDice] = useState<Die[]>(() => newDice());
   const [rollCount, setRollCount] = useState<number>(0);
 
   // dice[0] has the same face as all other dice, and every dice is held
