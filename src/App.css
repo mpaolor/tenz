@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.02);
+  }
+}
+
+.app {
+  min-height: 100vh;
+  background: linear-gradient(160deg, #0a0a1a 0%, #12122a 50%, #0d0d20 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Mono', 'Courier New', monospace;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.app__bg-grid {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(233, 69, 96, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(233, 69, 96, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+.app__title {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.app__title h1 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 900;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.app__title p {
+  color: #e94560;
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+.app__dice-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.app__roll-btn {
+  background: linear-gradient(135deg, #e94560, #b02d48);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  padding: 16px 52px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  font-family: 'DM Mono', monospace;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 8px 30px rgba(233, 69, 96, 0.4);
+  outline: none;
+}
+
+.app__roll-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 40px rgba(233, 69, 96, 0.6);
+}
+
+.app__roll-btn--won {
+  background: linear-gradient(135deg, #e94560, #c73652);
+}
+
+.app__hint {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  margin-top: 20px;
+}

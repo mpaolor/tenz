@@ -1,0 +1,23 @@
+.win-banner {
+  margin-bottom: 24px;
+  padding: 14px 36px;
+  background: linear-gradient(135deg, rgba(233, 69, 96, 0.2), rgba(233, 69, 96, 0.05));
+  border: 1px solid rgba(233, 69, 96, 0.5);
+  border-radius: 12px;
+  text-align: center;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.win-banner__title {
+  color: #e94560;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.win-banner__subtitle {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  margin-top: 4px;
+}
