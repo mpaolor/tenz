@@ -1,6 +1,6 @@
 import "./DieFace.css";
 
-import { PIPS } from "../utils/diceUtils";
+import { PIPS } from "../utils/dice-utils";
 
 interface DieFaceProps {
   face: number;

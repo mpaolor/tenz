@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { newDice, randomFace } from "./utils/diceUtils";
+import { newDice, randomFace } from "./utils/dice-utils";
 
 import Confetti from "./components/Confetti";
 import type { Die } from "./types";
@@ -10,15 +10,14 @@ import WinBanner from "./components/WinBanner";
 import { useState } from "react";
 
 export default function App() {
-  const randomDice: Die[] = newDice();
-  const [dice, setDice] = useState<Die[]>(randomDice);
+  const [dice, setDice] = useState<Die[]>(newDice());
   const [rollCount, setRollCount] = useState<number>(0);
 
   // dice[0] has the same face as all other dice, and every dice is held
   function checkWin(dice: Die[]): boolean {
     const firstFace: number = dice[0].face;
     return (
-      dice.every((d) => d.face === firstFace)
+      dice.every((d) => d.face === firstFace && d.held)
     );
   }
 
