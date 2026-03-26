@@ -15,6 +15,8 @@ export default function DieFace({ face, held, onClick }: DieFaceProps) {
     <button
       className={`die${held ? " die--held" : ""}`}
       onClick={onClick}
+      aria-label={`Die face showing ${face}. ${held ? "Held" : "Not held"}. Click to ${held ? "release" : "hold"} die.`}
+      aria-pressed={held}
     >
       {held && <div className="die__overlay" />}
       <svg viewBox="0 0 100 100" width="70" height="70">
